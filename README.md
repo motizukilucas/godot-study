@@ -16,6 +16,15 @@ test width and height is the actual window sizes
 
 ## Sprite (animations)
 * you can you the spirte node and select the number of Hframes from a sprite sheet
+## Backgrounds
+* You can just use the same 2D sprite node, but using some tweaks, like on the import tab selecting repeat, also on the sprite right most options, selecting region enabled
+> you can fill up the room pretty easily like this
+> There are other ways of doing this, for example using a TextureRect node, is actually easier, however it was meant to be a UI node, so it might have some drawbacks. This is something to be researched about
+## TileMap
+* This should be below the main 2D Sprite (if you have one) background node
+* There are three main options with tile sets in TileMap node. Single (for a single tile), auto tile, and tile atlas (if you have multiple different tiles in one texture pack)
+* For configuring how to set a single Tile go on the bitmask property of the TileSet property from TileMap node
+* There is collisions and a whole of other properties in tilemaps
 
 ## Physics
 * multiply delta, so if it's lagging it will move faster
@@ -42,6 +51,7 @@ test width and height is the actual window sizes
 * You can set a grid in the editor
 
 ## Tips
+* You can just right click some node to change it's type
 * on the error tab of the editor, Godot sometimes points out things that might be very helpfull, such as move_slide function is retuning a value but it's never used
 > this will make movement smoother after colliding with something
 * You can just right click a node and export it as a scene (to instance it later)
@@ -49,7 +59,7 @@ test width and height is the actual window sizes
 * You can/should use Node2D as the main root not for the world 
 > since you can move the root and all it's children will also move
 * you can lock positioning of nodes
-* Ysort object as a root node
+* Ysort object as a root node but not as the root one of the scene, but the root of interactable objects like player and boxes for example
 > will automatically sort the Y layer for you, but it's important to have it's instances with it's poistioning at the "feet" properly, so you run into any sorting "bugs"
 * $ (likes jQuery) let's you select a node from a scene by it's name
 
