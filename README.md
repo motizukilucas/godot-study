@@ -14,8 +14,26 @@ width and heigth is the "viewport" it can be zoomed in depending on the window s
 test width and height is the actual window sizes
 > for testing is good 1280x720
 
-## Sprite (animations)
-* you can you the spirte node and select the number of Hframes from a sprite sheet
+## Animations
+* you can you the sprite node and select the number of Hframes from a sprite sheet
+* Animation Player node - basic character movement animation
+> You should start running animations with the sprite already in movement, and finish it with sprite "stopped"
+* Animation Tree with Blend Space 2D - gives you a grid with a graph where you add values to control the animations
+> To prioritize one animation over another in Animation Tree (with grid). you can just tweak to grid, so it prioritzes one over another
+* A simple solution for controlling animations is creating a enum to control the state like ATTACK, MOVE, ROLL
+* In Animation Player you can call a function for example when the animaiton finishes
+### State Machine
+* space will trigger to roll 
+* move will have it's own function
+> match functions like a switch
+
+    match state:
+        MOVE:
+            function_move(delta)
+### AnimatedSprite(For simple animations)
+* for example the destruction of some terrain/object
+> something that will just play
+
 ## Backgrounds
 * You can just use the same 2D sprite node, but using some tweaks, like on the import tab selecting repeat, also on the sprite right most options, selecting region enabled
 > you can fill up the room pretty easily like this
@@ -39,16 +57,24 @@ test width and height is the actual window sizes
 * It's a good idea to have one collision shape for interacting with scenario, and another for hitboxes
 * You can actually draw collisions, like whole walls at a time (Collision Polygon)
 
-## Animation
-* Animation Player node - basic character movement animation
-> You should start running animations with the sprite already in movement, and finish it with sprite "stopped"
-* Animation Tree with Blend Space 2D - gives you a grid with a graph where you add values to control the animations
-> To prioritize one animation over another in Animation Tree (with grid). you can just tweak to grid, so it prioritzes one over another
+## Signals
+* nodes have specifc signals, for example animation finished, that you can hook with some function to handle it
+?? can you create a signal ??
 
+## Instancing
+* you can instance a scene by code by using something lke:
+    
+    GrassEffect = load(""res://"")
+    grassEffect = GrassEffect.instance()
+    main = get_tree().current_scene
+    main.add_child(grassEffect)
+    grassEffect.global_position = global_position
+> the last global_position is from the node owner of the script (in this case all grasses)
 ## General
 * the child's nodes positions are relative to the root node, the root node actually sits at the top left corner (you can move it, if you wish)
 * You can set collisions shape to be visible
 * You can set a grid in the editor
+* You can switch in the Scene tab to Remote which will show you real time data from the running game
 
 ## Tips
 * You can just right click some node to change it's type
@@ -61,8 +87,12 @@ test width and height is the actual window sizes
 * you can lock positioning of nodes
 * Ysort object as a root node but not as the root one of the scene, but the root of interactable objects like player and boxes for example
 > will automatically sort the Y layer for you, but it's important to have it's instances with it's poistioning at the "feet" properly, so you run into any sorting "bugs"
+> If you wanna group like bushes into a single node, make the root of it also a YSort node, because it will know how to sort
 * $ (likes jQuery) let's you select a node from a scene by it's name
+* Ctrl + D will duplicate a node
 
 ## Doubts
 ?? Difference beteween _physics_process and _process
+> main difference is that physics process actually waits for the physics to stop processing. So it's good if you want to use stuff like a node's positioning
+
 ?? is diagonal speed faster?
