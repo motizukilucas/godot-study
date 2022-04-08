@@ -57,6 +57,14 @@ test width and height is the actual window sizes
 * It's a good idea to have one collision shape for interacting with scenario, and another for hitboxes
 * You can actually draw collisions, like whole walls at a time (Collision Polygon)
 
+## Hitbox & Hurtbox
+* one way of doing it is with Area2D with CollisionShape with no collision shape
+> and in the scene you're adding it to, change the shape to fit the object
+
+* For controlling attack hithox one way is adding a Position2D node as a center position and adjusting the hitbox relative to it
+> and keying it in the AnimationPlayer and in it adjusting the rotation and positioning of the hitbox
+> and also keying the disable property of the collision shape at the start and end of the animation
+
 ## Signals
 * nodes have specifc signals, for example animation finished, that you can hook with some function to handle it
 ?? can you create a signal ??
@@ -75,6 +83,9 @@ test width and height is the actual window sizes
 * You can set collisions shape to be visible
 * You can set a grid in the editor
 * You can switch in the Scene tab to Remote which will show you real time data from the running game
+
+* **Layers** > controlling the layers of collisions so not all collisions happen the same way, for exaple, triggering only when a hitbox enters a hurtbox
+> the Layer is the one the object should be, the mask is the one it should interact/collide with
 
 ## Tips
 * You can just right click some node to change it's type
