@@ -31,6 +31,7 @@ test width and height is the actual window sizes
         MOVE:
             function_move(delta)
 ### AnimatedSprite(For simple animations)
+* when an object is constantly animated
 * for example the destruction of some terrain/object
 > something that will just play
 
@@ -87,6 +88,22 @@ test width and height is the actual window sizes
 * **Layers** > controlling the layers of collisions so not all collisions happen the same way, for exaple, triggering only when a hitbox enters a hurtbox
 > the Layer is the one the object should be, the mask is the one it should interact/collide with
 
+## Reusable
+### Inhenritence
+* one object can inherit funcionst for example from another object
+
+### Composition
+* you compose it from reusable assets like ""hurtbox** reusable scene
+* **stats**  scene
+> you can export variables so you can change it when instancing in other objects
+
+## Signal
+* you can create a signal to tell for example that your enemy has no health
+* then you can emi_signal
+
+## Set & Get
+* it will trigger whenever that varible is benig updated/set
+
 ## Tips
 * You can just right click some node to change it's type
 * on the error tab of the editor, Godot sometimes points out things that might be very helpfull, such as move_slide function is retuning a value but it's never used
@@ -101,6 +118,10 @@ test width and height is the actual window sizes
 > If you wanna group like bushes into a single node, make the root of it also a YSort node, because it will know how to sort
 * $ (likes jQuery) let's you select a node from a scene by it's name
 * Ctrl + D will duplicate a node
+* **when you're going down the scene tree you may want to update something in the scrpt, if you're going up like your stats node is telling you root object somehitng you may want to use a sginal**
+
+### Polishing
+* you cna just set a variable as an export variable and update it while the game is running to tweak it's values
 
 ## Doubts
 ?? Difference beteween _physics_process and _process
