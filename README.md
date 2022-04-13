@@ -131,3 +131,6 @@ test width and height is the actual window sizes
 > main difference is that physics process actually waits for the physics to stop processing. So it's good if you want to use stuff like a node's positioning
 
 ?? is diagonal speed faster?
+
+## TODO
+* ??export collision shape and got into tool node??
