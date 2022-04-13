@@ -99,7 +99,8 @@ test width and height is the actual window sizes
 
 ## Signal
 * you can create a signal to tell for example that your enemy has no health
-* then you can emi_signal
+* then you can emit_signal
+* **you can connect signals trhough code**
 
 ## Set & Get
 * it will trigger whenever that varible is benig updated/set
@@ -119,6 +120,8 @@ test width and height is the actual window sizes
 * $ (likes jQuery) let's you select a node from a scene by it's name
 * Ctrl + D will duplicate a node
 * **when you're going down the scene tree you may want to update something in the scrpt, if you're going up like your stats node is telling you root object somehitng you may want to use a sginal**
+* you can preload resources
+* YSort can fix a lot of problem when you have for example animations player over the player, even though it shouldn't
 
 ### Polishing
 * you cna just set a variable as an export variable and update it while the game is running to tweak it's values
