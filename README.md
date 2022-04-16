@@ -101,6 +101,13 @@ test width and height is the actual window sizes
 ## Set & Get
 * it will trigger whenever that varible is benig updated/set
 
+## Camera
+* Camera2D node as a child of the player and enabling current will follow the root node
+> you can instead of making the Camera2D a child of the Player's node, make it an independent node and adding to the player a RemoteTranform2D, and setting it to the Camera which will make the camera follow the player, but won't destroy the camera's node when the player is destroyed
+> you can enable smoothing to make to following a little batter
+> there's a lot of tweaking you can do with the camera, like pixel snap, making it run in the physics proccess
+* Adding a CanvasLayer Node and the UI elements as childs of it will make it also follow the camera
+
 ## Tips
 * You can just right click some node to change it's type
 * on the error tab of the editor, Godot sometimes points out things that might be very helpfull, such as move_slide function is retuning a value but it's never used
