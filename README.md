@@ -1,5 +1,6 @@
 # LEARN GODOT
 ## scope of the learning project: action rpg
+https://www.youtube.com/watch?v=mAbG8Oi-SvQ&list=PL9FzW-m48fn2SlrW0KoLT4n5egNdX-W9a
 
 ## Importing
 * For importing items you can simply drag them to the godot editor
