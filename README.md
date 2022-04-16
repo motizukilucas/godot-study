@@ -66,10 +66,6 @@ test width and height is the actual window sizes
 > and keying it in the AnimationPlayer and in it adjusting the rotation and positioning of the hitbox
 > and also keying the disable property of the collision shape at the start and end of the animation
 
-## Signals
-* nodes have specifc signals, for example animation finished, that you can hook with some function to handle it
-?? can you create a signal ??
-
 ## Instancing
 * you can instance a scene by code by using something lke:
     
@@ -98,9 +94,9 @@ test width and height is the actual window sizes
 > you can export variables so you can change it when instancing in other objects
 
 ## Signal
-* you can create a signal to tell for example that your enemy has no health
-* then you can emit_signal
-* **you can connect signals trhough code**
+* nodes have specifc signals, for example animation finished, that you can hook with some function to handle it
+* you can create a signal to tell for example that your enemy has no health, then you can emit_signal
+* **you can connect signals trhough code** and also you can pass parameters with it
 
 ## Set & Get
 * it will trigger whenever that varible is benig updated/set
@@ -122,9 +118,15 @@ test width and height is the actual window sizes
 * **when you're going down the scene tree you may want to update something in the scrpt, if you're going up like your stats node is telling you root object somehitng you may want to use a sginal**
 * you can preload resources
 * YSort can fix a lot of problem when you have for example animations player over the player, even though it shouldn't
+### Performance
+* While running the game you can check frame rate in the bottom tabs, Monitor one
+> in Profiler tab you can actually see which functions are causing problems in performance, like how many calls function is having
 
-### Polishing
-* you cna just set a variable as an export variable and update it while the game is running to tweak it's values
+## UI
+* most of the Controls nodes are related to UI elements
+
+## Polishing
+* you can just set a variable as an export variable and update it while the game is running to tweak it's values
 
 ## Doubts
 ?? Difference beteween _physics_process and _process
@@ -132,5 +134,10 @@ test width and height is the actual window sizes
 
 ?? is diagonal speed faster?
 
+## BUGS
+* if you're using area_entered for trigerring hits, what if the are never actually leaves? Like when the player is hugging a wall...
+> a possible fix for it is twearking with the monitoring and monitorable properties of collisionShape
+### Overlap
+* Area2D get_overlapping_areas will return an array with all bodies that are overlapping
 ## TODO
 * ??export collision shape and got into tool node??
