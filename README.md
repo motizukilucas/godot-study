@@ -109,6 +109,11 @@ test width and height is the actual window sizes
 > there's a lot of tweaking you can do with the camera, like pixel snap, making it run in the physics proccess
 * Adding a CanvasLayer Node and the UI elements as childs of it will make it also follow the camera
 
+## Sound
+* AudioStreamPlayer vs AudioStreamPlayer2D
+> 2D one plays the sound relatve to the node's position
+* in the animation controller you can add the sound effect to player together with the animation
+
 ## Tips
 * You can just right click some node to change it's type
 * on the error tab of the editor, Godot sometimes points out things that might be very helpfull, such as move_slide function is retuning a value but it's never used
